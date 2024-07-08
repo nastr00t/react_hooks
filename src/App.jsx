@@ -1,8 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react' 
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  //useEffect se ejecuta despues de cada renderizado
+  useEffect(() => { 
+    //Actualiza el titulo de la página con el valor de count
+    document.title = `Count is ${count}`;
+  },[count]);
 
   return (
     <>
